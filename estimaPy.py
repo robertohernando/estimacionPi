@@ -1,10 +1,15 @@
 # Estimación de pi mediante el método de Montecarlo
 
-# 1. Se define el número de intentos
-INTENTOS = 100
+from random import randint, uniform,random
+aciertos = 0
+INTENTOS = 1000000
 
-# 2. Se hace la tirada
+for i in range(1, INTENTOS):
+    x = uniform (-1,1)
+    y = uniform(-1,1)
+    if x**2 + y**2 <= 1:
+        aciertos += 1
+        
+pi = (aciertos / INTENTOS) * 4
 
-# 3. Se ve si está dentro del círculo
-
-# 4. Se estima pi como aciertos/intentos
+print(pi)
